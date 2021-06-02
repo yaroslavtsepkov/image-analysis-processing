@@ -1,22 +1,8 @@
 import matplotlib.pyplot as plt
 import numpy as np
-from PIL import Image
 import random
 
-def hist(img: np.ndarray, x='brightness', y='count pixel', title='image hist'):
-    """
-    The function show hist plot
-    :params img input your img in RGB 
-    :type img PIL.Image.Image
-    """
-    img = np.array(img)
-    plt.hist(img.ravel(), bins=range(257))
-    plt.xlabel(x)
-    plt.ylabel(y)
-    plt.title(title)
-    plt.show()
-
-def sp_noise(image: Image.Image, prob: float)->Image.Image:
+def sp_noise(image:np.ndarray, prob: float)->np.ndarray:
     """
     Add salt and pepper noise to image
     prob: Probability of the noise
@@ -33,7 +19,7 @@ def sp_noise(image: Image.Image, prob: float)->Image.Image:
                 output[i][j] = 255
             else:
                 output[i][j] = image[i][j]
-    return Image.fromarray(output)
+    return output[i][j]
 
 if __name__ == "__main__":
 	pass
