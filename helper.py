@@ -19,7 +19,7 @@ def sp_noise(image:np.ndarray, prob: float)->np.ndarray:
                 output[i][j] = 255
             else:
                 output[i][j] = image[i][j]
-    return output[i][j]
+    return np.array(output[i][j],dtype=np.uint8)
 
 if __name__ == "__main__":
 	pass
